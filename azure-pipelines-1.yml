@@ -19,5 +19,5 @@ steps:
     displayName: Step1 script
     
   - script:
-      echo ${{variables:os}}
+      echo ${{ variables:os }}
     displayName: Step2 script
