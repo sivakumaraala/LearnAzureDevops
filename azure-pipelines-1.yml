@@ -21,3 +21,7 @@ steps:
   - script: 
       echo ${{ variables.os }}
     displayName: Step2 script
+    
+  - script:
+      echo ${{ variables:os }}
+    displayName: Step3 script
