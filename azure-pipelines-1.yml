@@ -1,11 +1,23 @@
-variables:
+# variables:
+#   os: windows
+
+# steps:
+#   - script: 
+#       echo $(os)
+#     displayName: Step1 script
+
+#   - script: 
+#       echo ${{ variables.os }}
+#     displayName: Step2 script
+    
+variables: 
   os: windows
 
 steps:
-  - script: 
+  - script:
       echo $(os)
     displayName: Step1 script
-
-  - script: 
-      echo ${{ variables.os }}
+    
+  - script:
+      echo ${{variables:os}}
     displayName: Step2 script
