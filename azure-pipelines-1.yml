@@ -1,0 +1,11 @@
+variables: 
+  os: windows
+
+steps:
+  - script:
+     echo $(os)
+    displayName: Step1 script
+    
+  - script:
+     echo ${{variables:os}}
+    displayName: Step2 script
