@@ -18,6 +18,6 @@ steps:
       echo $(os)
     displayName: Step1 script
     
-  - script:
-      echo ${{ variables:os }}
+  - script: 
+      echo ${{ variables.os }}
     displayName: Step2 script
