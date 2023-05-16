@@ -10,18 +10,29 @@
 #       echo ${{ variables.os }}
 #     displayName: Step2 script
     
-variables: 
-  os: windows
+# variables: 
+#   os: windows
 
+# steps:
+#   - script:
+#       echo $(os)
+#     displayName: Step1 script
+    
+#   - script: 
+#       echo ${{ variables.os }}
+#     displayName: Step2 script
+    
+#   - script:
+#       echo ${{ variables.os }}
+#     displayName: Step3 script
+
+variables:
+  - group: TestGroup
+  - name: IdontKnow
+    value: test
+    
 steps:
-  - script:
-      echo $(os)
-    displayName: Step1 script
-    
-  - script: 
-      echo ${{ variables.os }}
-    displayName: Step2 script
-    
-  - script:
-      echo ${{ variables.os }}
-    displayName: Step3 script
+  - script: |
+     echo: "hello"
+     echo: "variable from group $(var1)"
+     displayName
