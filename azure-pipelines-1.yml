@@ -30,9 +30,20 @@ variables:
   - group: TestGroup
   - name: IdontKnow
     value: test
+  
+parameters:
+  - name: environment
+    displayName: Which Environment to deploy?
+    type: string
+    default: 'develop'
+    values:
+      - develop
+      - preproduction
+      - production
     
 steps:
   - script: |
      echo "hello"
      echo "variable from group $(var1)"
+     echo "variable from parameter ${{ parameters.environment }}"
     displayName: Step1 variable group
