@@ -33,6 +33,6 @@ variables:
     
 steps:
   - script: |
-     echo: "hello"
-     echo: "variable from group $(var1)"
+     echo "hello"
+     echo "variable from group $(var1)"
     displayName: Step1 variable group
