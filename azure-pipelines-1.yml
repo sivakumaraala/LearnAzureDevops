@@ -26,24 +26,51 @@
 #       echo ${{ variables.os }}
 #     displayName: Step3 script
 
-variables:
-  - group: TestGroup
-  - name: IdontKnow
-    value: test
+# variables:
+#   - group: TestGroup
+#   - name: IdontKnow
+#     value: test
   
-parameters:
-  - name: environment
-    displayName: Which Environment to deploy?
-    type: string
-    default: 'develop'
-    values:
-      - develop
-      - preproduction
-      - production
+# parameters:
+#   - name: environment
+#     displayName: Which Environment to deploy?
+#     type: string
+#     default: 'develop'
+#     values:
+#       - develop
+#       - preproduction
+#       - production
     
-steps:
-  - script: |
-     echo "hello"
-     echo "variable from group $(var1)"
-     echo "variable from parameter ${{ parameters.environment }}"
-    displayName: Step1 variable group
+# steps:
+#   - script: |
+#      echo "hello"
+#      echo "variable from group $(var1)"
+#      echo "variable from parameter ${{ parameters.environment }}"
+#     displayName: Step1 variable group
+
+stages:
+  - stage: TestDev
+    jobs:
+      - job: job1
+        steps:
+          - script:
+             echo step1job1
+            displayName: Script1
+      - job: job2
+        steps:
+          - script:
+             echo step2job2
+            displayName: Script2
+  - stage: TestQA
+    jobs:
+      - job: job1
+        steps:
+          - script:
+             echo step1job1
+            displayName: Script1
+      - job: job2
+        steps:
+          - script:
+             echo step2job2
+            displayName: Script2
+
