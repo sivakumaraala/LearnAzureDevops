@@ -48,29 +48,42 @@
 #      echo "variable from parameter ${{ parameters.environment }}"
 #     displayName: Step1 variable group
 
-stages:
-  - stage: TestDev
-    jobs:
-      - job: job1
-        steps:
-          - script:
-             echo step1job1
-            displayName: Script1
-      - job: job2
-        steps:
-          - script:
-             echo step2job2
-            displayName: Script2
-  - stage: TestQA
-    jobs:
-      - job: job1
-        steps:
-          - script:
-             echo step1job1
-            displayName: Script1
-      - job: job2
-        steps:
-          - script:
-             echo step2job2
-            displayName: Script2
+# stages:
+#   - stage: TestDev
+#     jobs:
+#       - job: job1
+#         steps:
+#           - script:
+#              echo step1job1
+#             displayName: Script1
+#       - job: job2
+#         steps:
+#           - script:
+#              echo step2job2
+#             displayName: Script2
+#   - stage: TestQA
+#     jobs:
+#       - job: job1
+#         steps:
+#           - script:
+#              echo step1job1
+#             displayName: Script1
+#       - job: job2
+#         steps:
+#           - script:
+#              echo step2job2
+#             displayName: Script2
+
+# Variables Pratice
+
+variables:
+  - group: TestGroup
+  - name: groupName
+    value: test
+
+steps:
+  - script: |
+     echo "Hello $(inputvar)"
+     echo "variable from group $(var1)"
+    displayName: step1
 
